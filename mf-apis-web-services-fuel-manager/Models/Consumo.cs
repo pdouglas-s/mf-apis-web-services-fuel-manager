@@ -17,6 +17,11 @@ namespace mf_apis_web_services_fuel_manager.Models
         [Required]
         public TipoCombustivel Tipo { get; set; }
 
+        [Required]
+        public int VeiculoId { get; set; }
+
+        public Veiculo Veiculo { get; set; }
+
     }
 
     public enum TipoCombustivel

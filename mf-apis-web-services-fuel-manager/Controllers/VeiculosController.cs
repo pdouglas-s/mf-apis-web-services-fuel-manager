@@ -47,7 +47,7 @@ namespace mf_apis_web_services_fuel_manager.Controllers
             var model = await _context.Veiculos
                 .FirstOrDefaultAsync(c => c.Id == id);
 
-            if (model == null) NotFound();
+            if (model == null) return NotFound();
 
             return Ok(model);
 
@@ -73,7 +73,7 @@ namespace mf_apis_web_services_fuel_manager.Controllers
         {
             var model = await _context.Veiculos.FindAsync(id);
 
-            if (model == null) NotFound();
+            if (model == null) return NotFound();
 
             _context.Veiculos.Remove(model);
             await _context.SaveChangesAsync();
